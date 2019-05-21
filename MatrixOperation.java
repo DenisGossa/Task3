@@ -31,25 +31,17 @@ public class MatrixOperation {
 	 public static double[][] transposeSquareMatrix(double [][] m){
 	    /*Transpose without temp[][] array*/
 	        double tmp;
-	       
-	       int i, j;
-	        for(int k=0;k<m[0].length;++k) {
-	        	i=k;
-	        	j=k;
-	        	while(j<m.length) {
-	        						if(i==j) {
-	        									++j;
-	        									continue;
-	        									}
-	        						else {
-	        								tmp=m[i][j];
-	        								m[i][j]=m[j][i];
-	        								m[j][i]=tmp;
-	        								++j;
-	        							}
-	        	}
-	        	
-	        }	    
+	       	     
+	        for(int i=0;i<m.length;i++) {
+	        	 for(int j=i+1;j<m.length;j++){
+	        		 if(i==j) {continue;}
+	        		 else {
+	        			 tmp=m[i][j];
+	        			 m[i][j]=m[j][i];
+	        			 m[j][i]=tmp;
+	        		 }
+	           	 }
+	         }
 	        return m;
 	 }
 	
