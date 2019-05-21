@@ -632,7 +632,7 @@ public String findMinimum(Matrix matrix) {
 	double minvalue,tmp;
 	StringBuilder strout = new StringBuilder();
 		 
-		 
+	if(rows<=1&&columns<=1) {return "-1";}	 
 		//get first
 	try {
 		if(matrix.isValidRange(0, 0)) {
@@ -672,7 +672,8 @@ public String findMaximum(Matrix matrix) {
 		
 	StringBuilder strout = new StringBuilder();
 	double maxvalue,tmp;
-//get first
+	if(rows<=1&&columns<=1) {return "-1";}
+	//get first
 	try {
 		if(matrix.isValidRange(0, 0)) {
 			maxvalue=matrix.getElement(0, 0);
